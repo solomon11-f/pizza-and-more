@@ -37,40 +37,40 @@ function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 flex items-center justify-center">
+    <div className="min-h-screen pt-24 pb-16 flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full px-4">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h1 className="text-2xl font-bold text-center mb-6">Admin Login</h1>
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl font-bold text-center mb-8 text-secondary">Admin Login</h1>
           
           {error && (
-            <div className="bg-red-50 text-red-500 p-3 rounded mb-4">
+            <div className="bg-red-50 text-red-500 p-4 rounded-md mb-6 border border-red-200">
               {error}
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
                 required
               />
             </div>
@@ -78,9 +78,9 @@ function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition disabled:opacity-50"
+              className="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-primary-dark transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg shadow-sm"
             >
-              {loading ? 'Loading...' : 'Login'}
+              {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
         </div>
@@ -91,7 +91,11 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl text-gray-600">Loading...</div>
+      </div>
+    }>
       <LoginForm />
     </Suspense>
   )
