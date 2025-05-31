@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Oven arch -->
+  <path d="M4 6C4 4 8 2 12 2C16 2 20 4 20 6C20 8 16 10 12 10C8 10 4 8 4 6Z" fill="white"/>
+  <!-- Oven opening -->
+  <path d="M5 6V18C5 19 8 20 12 20C16 20 19 19 19 18V6" stroke="white" stroke-width="2"/>
+  <!-- Flames -->
+  <path d="M8 14C10 12 11 16 8 16C5 16 6 12 8 14Z" fill="white"/>
+  <path d="M12 12C14 10 15 14 12 14C9 14 10 10 12 12Z" fill="white"/>
+  <path d="M16 14C18 12 19 16 16 16C13 16 14 12 16 14Z" fill="white"/>
+</svg> 

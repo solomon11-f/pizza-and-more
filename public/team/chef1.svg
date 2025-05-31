@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="#F5F5F5"/>
+  
+  <!-- Chef hat -->
+  <path d="M150 100C150 50 250 50 250 100V150H150V100Z" fill="white"/>
+  <rect x="140" y="150" width="120" height="20" fill="white"/>
+  
+  <!-- Face -->
+  <circle cx="200" cy="200" r="60" fill="#FFB74D"/>
+  
+  <!-- Eyes -->
+  <circle cx="180" cy="190" r="5" fill="#2D2D2D"/>
+  <circle cx="220" cy="190" r="5" fill="#2D2D2D"/>
+  
+  <!-- Smile -->
+  <path d="M170 210C180 220 220 220 230 210" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Chef uniform -->
+  <path d="M140 250V400H260V250H140Z" fill="white"/>
+  <circle cx="170" cy="280" r="5" fill="#2D2D2D"/>
+  <circle cx="170" cy="300" r="5" fill="#2D2D2D"/>
+  <circle cx="170" cy="320" r="5" fill="#2D2D2D"/>
+</svg> 

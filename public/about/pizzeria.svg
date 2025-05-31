@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background wall -->
+  <rect width="800" height="600" fill="#F5F5F5"/>
+  
+  <!-- Floor -->
+  <rect y="400" width="800" height="200" fill="#8D6E63"/>
+  
+  <!-- Pizza oven -->
+  <path d="M50 200C50 150 150 100 250 100C350 100 450 150 450 200V400H50V200Z" fill="#FF6B6B"/>
+  <path d="M150 200C150 180 200 160 250 160C300 160 350 180 350 200V300H150V200Z" fill="#2D2D2D"/>
+  
+  <!-- Tables -->
+  <rect x="500" y="300" width="80" height="80" fill="#8D6E63"/>
+  <rect x="600" y="300" width="80" height="80" fill="#8D6E63"/>
+  
+  <!-- Chairs -->
+  <rect x="520" y="250" width="40" height="40" fill="#5D4037"/>
+  <rect x="620" y="250" width="40" height="40" fill="#5D4037"/>
+  <rect x="520" y="390" width="40" height="40" fill="#5D4037"/>
+  <rect x="620" y="390" width="40" height="40" fill="#5D4037"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="700" cy="100" r="30" fill="#FF6B6B"/>
+  <circle cx="600" cy="150" r="25" fill="#FF6B6B"/>
+  <circle cx="750" cy="200" r="20" fill="#FF6B6B"/>
+</svg> 

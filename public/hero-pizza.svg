@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#2D2D2D"/>
+  
+  <!-- Pizza 1 -->
+  <g transform="translate(200,300) rotate(-15)">
+    <circle cx="0" cy="0" r="150" fill="#FFE0B2"/>
+    <circle cx="0" cy="0" r="140" fill="#FF6B6B"/>
+    <circle cx="0" cy="0" r="135" fill="#FFF3E0"/>
+    <!-- Toppings -->
+    <circle cx="-50" cy="-50" r="15" fill="#FF8A80"/>
+    <circle cx="50" cy="20" r="15" fill="#FF8A80"/>
+    <circle cx="-20" cy="60" r="15" fill="#FF8A80"/>
+  </g>
+
+  <!-- Pizza 2 -->
+  <g transform="translate(600,250)">
+    <circle cx="0" cy="0" r="180" fill="#FFE0B2"/>
+    <circle cx="0" cy="0" r="170" fill="#FF6B6B"/>
+    <circle cx="0" cy="0" r="165" fill="#FFF3E0"/>
+    <!-- Toppings -->
+    <path d="M-70 -70C-40 -90 -30 -50 -60 -40C-90 -30 -100 -70 -70 -70Z" fill="#4CAF50"/>
+    <path d="M50 0C80 -20 90 20 60 30C30 40 20 0 50 0Z" fill="#4CAF50"/>
+    <path d="M-20 80C10 60 20 100 -10 110C-40 120 -50 80 -20 80Z" fill="#4CAF50"/>
+  </g>
+
+  <!-- Pizza 3 -->
+  <g transform="translate(950,350) rotate(20)">
+    <circle cx="0" cy="0" r="120" fill="#FFE0B2"/>
+    <circle cx="0" cy="0" r="110" fill="#FF6B6B"/>
+    <circle cx="0" cy="0" r="105" fill="#FFF3E0"/>
+    <!-- Toppings -->
+    <circle cx="-40" cy="-40" r="12" fill="#8D6E63"/>
+    <circle cx="40" cy="-20" r="12" fill="#8D6E63"/>
+    <circle cx="0" cy="40" r="12" fill="#8D6E63"/>
+    <circle cx="-30" cy="30" r="8" fill="#263238"/>
+    <circle cx="30" cy="30" r="8" fill="#263238"/>
+  </g>
+
+  <!-- Steam/Smoke effects -->
+  <path d="M300 100C320 80 340 90 330 110C320 130 280 120 300 100Z" fill="#FFFFFF" fill-opacity="0.1"/>
+  <path d="M600 50C620 30 640 40 630 60C620 80 580 70 600 50Z" fill="#FFFFFF" fill-opacity="0.1"/>
+  <path d="M900 150C920 130 940 140 930 160C920 180 880 170 900 150Z" fill="#FFFFFF" fill-opacity="0.1"/>
+</svg> 

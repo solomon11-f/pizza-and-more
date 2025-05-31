@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="#F5F5F5"/>
+  
+  <!-- Hair -->
+  <path d="M150 150C150 100 250 100 250 150V180H150V150Z" fill="#4A4A4A"/>
+  
+  <!-- Face -->
+  <circle cx="200" cy="200" r="60" fill="#FFB74D"/>
+  
+  <!-- Eyes -->
+  <circle cx="180" cy="190" r="5" fill="#2D2D2D"/>
+  <circle cx="220" cy="190" r="5" fill="#2D2D2D"/>
+  
+  <!-- Smile -->
+  <path d="M170 210C180 220 220 220 230 210" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Business attire -->
+  <path d="M140 250V400H260V250H140Z" fill="#2D2D2D"/>
+  <path d="M180 250V400H220V250H180Z" fill="white"/>
+  
+  <!-- Clipboard -->
+  <rect x="280" y="280" width="60" height="80" fill="white"/>
+  <rect x="290" y="290" width="40" height="5" fill="#2D2D2D"/>
+  <rect x="290" y="300" width="40" height="5" fill="#2D2D2D"/>
+  <rect x="290" y="310" width="40" height="5" fill="#2D2D2D"/>
+</svg> 

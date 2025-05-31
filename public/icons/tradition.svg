@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pizza oven -->
+  <path d="M4 8C4 6 8 4 12 4C16 4 20 6 20 8" stroke="white" stroke-width="2"/>
+  <!-- Base -->
+  <path d="M4 8V18C4 20 8 22 12 22C16 22 20 20 20 18V8" stroke="white" stroke-width="2"/>
+  <!-- Flames -->
+  <path d="M8 14C10 12 11 16 8 16C5 16 6 12 8 14Z" fill="white"/>
+  <path d="M12 12C14 10 15 14 12 14C9 14 10 10 12 12Z" fill="white"/>
+  <path d="M16 14C18 12 19 16 16 16C13 16 14 12 16 14Z" fill="white"/>
+</svg> 
