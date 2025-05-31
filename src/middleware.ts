@@ -10,12 +10,25 @@ export async function middleware(req: NextRequest) {
     data: { session },
   } = await supabase.auth.getSession()
 
-  // If there's no session and the user is trying to access /admin
-  if (!session && req.nextUrl.pathname.startsWith('/admin')) {
-    const redirectUrl = req.nextUrl.clone()
-    redirectUrl.pathname = '/login'
-    redirectUrl.searchParams.set('redirectTo', req.nextUrl.pathname)
-    return NextResponse.redirect(redirectUrl)
+  // If trying to access admin routes
+  if (req.nextUrl.pathname.startsWith('/admin')) {
+    if (!session) {
+      // Redirect to login if no session
+      const redirectUrl = req.nextUrl.clone()
+      redirectUrl.pathname = '/login'
+      redirectUrl.searchParams.set('redirectTo', req.nextUrl.pathname)
+      return NextResponse.redirect(redirectUrl)
+    }
+
+    // Get user data and check admin role
+    const { data: { user } } = await supabase.auth.getUser()
+    const isAdmin = user?.app_metadata?.role === 'admin'
+
+    if (!isAdmin) {
+      console.log('User not admin:', user)
+      // Redirect non-admin users to home page
+      return NextResponse.redirect(new URL('/', req.url))
+    }
   }
 
   return res

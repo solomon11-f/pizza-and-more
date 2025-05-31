@@ -30,7 +30,8 @@ const ContactPage = () => {
       console.log(data)
       alert('Poruka je uspešno poslata!')
       reset()
-    } catch (error) {
+    } catch (err) {
+      console.error(err)
       alert('Došlo je do greške prilikom slanja poruke. Molimo pokušajte ponovo.')
     }
   }

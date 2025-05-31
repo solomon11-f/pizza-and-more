@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
-import type { Pizza, TeamMember, Settings } from '@/lib/supabase'
+import type { Pizza, TeamMember } from '@/lib/supabase'
 
 export function usePizzas(category?: string) {
   const [pizzas, setPizzas] = useState<Pizza[]>([])

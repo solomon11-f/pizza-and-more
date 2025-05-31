@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { FaMotorcycle, FaPhone } from 'react-icons/fa'
 import { SiGlovo } from 'react-icons/si'
 

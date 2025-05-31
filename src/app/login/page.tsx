@@ -1,13 +1,12 @@
 'use client'
 
-import { Suspense } from 'react'
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
-function LoginForm() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+export default function LoginPage() {
+  const [email, setEmail] = useState('admin@pizzaandmore.rs')
+  const [password, setPassword] = useState('Pizza123!')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   
@@ -21,82 +20,124 @@ function LoginForm() {
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
       if (error) throw error
 
-      router.push(redirectTo)
+      if (data.session) {
+        router.push(redirectTo)
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')
+      console.error('Login error:', err)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full px-4">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold text-center mb-8 text-secondary">Admin Login</h1>
-          
-          {error && (
-            <div className="bg-red-50 text-red-500 p-4 rounded-md mb-6 border border-red-200">
-              {error}
-            </div>
-          )}
+    <div style={{ 
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      backgroundColor: '#f3f4f6'
+    }}>
+      <div style={{
+        width: '100%',
+        maxWidth: '400px',
+        backgroundColor: 'white',
+        padding: '32px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h1 style={{
+          fontSize: '24px',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '24px'
+        }}>Admin Login</h1>
+        
+        {error && (
+          <div style={{
+            backgroundColor: '#fee2e2',
+            color: '#dc2626',
+            padding: '12px',
+            borderRadius: '4px',
+            marginBottom: '16px'
+          }}>
+            {error}
+          </div>
+        )}
 
-          <form onSubmit={handleLogin} className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
-                required
-              />
-            </div>
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div>
+            <label style={{
+              display: 'block',
+              marginBottom: '4px',
+              fontSize: '14px',
+              fontWeight: '500'
+            }}>
+              Email
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '8px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px'
+              }}
+              required
+            />
+          </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Password
-              </label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
-                required
-              />
-            </div>
+          <div>
+            <label style={{
+              display: 'block',
+              marginBottom: '4px',
+              fontSize: '14px',
+              fontWeight: '500'
+            }}>
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '8px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px'
+              }}
+              required
+            />
+          </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-primary-dark transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-lg shadow-sm"
-            >
-              {loading ? 'Logging in...' : 'Login'}
-            </button>
-          </form>
-        </div>
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              backgroundColor: '#FF6B6B',
+              color: 'white',
+              padding: '12px',
+              borderRadius: '4px',
+              fontWeight: '500',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.7 : 1
+            }}
+          >
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
       </div>
     </div>
-  )
-}
-
-export default function LoginPage() {
-  return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl text-gray-600">Loading...</div>
-      </div>
-    }>
-      <LoginForm />
-    </Suspense>
   )
 } 

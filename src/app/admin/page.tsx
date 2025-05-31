@@ -27,7 +27,7 @@ export default function AdminPage() {
       // 1. Upload image to Supabase Storage
       const fileExt = file.name.split('.').pop()
       const fileName = `${Math.random()}.${fileExt}`
-      const { data: uploadData, error: uploadError } = await supabase.storage
+      const { error: uploadError } = await supabase.storage
         .from('pizza-images')
         .upload(fileName, file)
 
@@ -133,7 +133,7 @@ export default function AdminPage() {
               </label>
               <select
                 value={category}
-                onChange={(e) => setCategory(e.target.value as any)}
+                onChange={(e) => setCategory(e.target.value as 'traditional' | 'special' | 'vegetarian')}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
                 required
               >
